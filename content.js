@@ -66,7 +66,7 @@ window.PORTFOLIO_CONTENT = {
       copied: "已复制"
     },
     footer: {
-      copyright: "你的名字 © 2026",
+      copyright: "LEO © 2026",
       made: "用设计与代码构建"
     }
   },
@@ -137,7 +137,7 @@ window.PORTFOLIO_CONTENT = {
       copied: "Copied"
     },
     footer: {
-      copyright: "Your Name © 2026",
+      copyright: "LEO © 2026",
       made: "Built with design and code"
     }
   },
