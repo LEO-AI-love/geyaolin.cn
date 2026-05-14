@@ -7,10 +7,10 @@ window.PORTFOLIO_CONTENT = {
     },
     hero: {
       year: "2026",
-      title: "Hi, About me",
-      roles: ["AI产品经理", "运动爱好者", "交互设计师"],
+      title: "耀霖 / AI 产品经理",
+      roles: ["AI 产品经理", "独立产品实践者", "交互体验设计"],
       tagline:
-        "我叫耀霖，一名AI产品经理。热爱探索新事物，热爱生活，热爱运动。\n坐标深圳。",
+        "我关注 AI 工具、内容工作流和个人效率产品，把复杂能力拆成清晰、低打扰、能落地的产品体验。\n坐标深圳。",
       cta: "查看作品"
     },
     work: {
@@ -23,11 +23,11 @@ window.PORTFOLIO_CONTENT = {
       kicker: "02 - 关于我",
       title: "从真实目标出发，设计可持续生长的产品系统",
       bio: [
-        "这里写你的核心经历：你做过哪些产品、服务过什么行业、解决过什么类型的问题。",
-        "第二段可以写你的方法论与个人气质：你如何理解用户、系统、商业和技术之间的关系。"
+        "我长期关注 AI 产品、内容工具和效率工作流，习惯从真实使用场景出发，把复杂能力拆成清晰、低打扰、可持续迭代的产品体验。",
+        "我正在整理自己的独立项目，包括低视觉小说阅读器、AI 工作流工具和个人品牌系统，希望把产品判断、交互设计和 AI 实践沉淀成可展示的作品。"
       ],
       currentLabel: "当前身份",
-      current: "你的当前职位 / 身份",
+      current: "AI 产品经理 / 独立产品实践者",
       focus: "AI 产品设计 · 体验策略 · 独立项目",
       directionLabel: "关注方向",
       directions: [
@@ -36,7 +36,7 @@ window.PORTFOLIO_CONTENT = {
         { tag: "品牌", label: "个人 IP 与视觉表达" }
       ],
       resume: "下载简历",
-      resumeState: "即将上线"
+      resumeState: "整理中"
     },
     skills: {
       kicker: "03 - 技能",
@@ -78,10 +78,10 @@ window.PORTFOLIO_CONTENT = {
     },
     hero: {
       year: "2026",
-      title: "Hi, About me",
-      roles: ["AI Product Manager", "AI Product", "Explorer", "Sports Lover"],
+      title: "Yaolin / AI Product Manager",
+      roles: ["AI Product Manager", "Independent Builder", "Interaction Design"],
       tagline:
-        "I'm Yaolin, an AI product manager. I love exploring new things, living fully, and staying active.\nBased in Shenzhen.",
+        "I work on AI tools, content workflows, and personal productivity products, turning complex capabilities into clear, low-friction product experiences.\nBased in Shenzhen.",
       cta: "View Work"
     },
     work: {
@@ -94,11 +94,11 @@ window.PORTFOLIO_CONTENT = {
       kicker: "02 - About",
       title: "Designing product systems from real goals and behavior",
       bio: [
-        "Write your core background here: products you have shipped, industries you understand, and the problems you are good at solving.",
-        "Use the second paragraph for your taste and method: how you think about users, systems, business, and technology."
+        "I focus on AI products, content tools, and workflow design, starting from real usage scenarios and translating complex capabilities into usable product systems.",
+        "I am currently collecting independent product work, including a low-vision novel reader, AI workflow experiments, and a personal brand system."
       ],
       currentLabel: "Current",
-      current: "Your role / identity",
+      current: "AI Product Manager / Independent Builder",
       focus: "AI Product Design · Experience Strategy · Independent Projects",
       directionLabel: "Focus Areas",
       directions: [
@@ -107,7 +107,7 @@ window.PORTFOLIO_CONTENT = {
         { tag: "Brand", label: "Personal identity and visual expression" }
       ],
       resume: "Download Resume",
-      resumeState: "Coming soon"
+      resumeState: "In progress"
     },
     skills: {
       kicker: "03 - Skills",
@@ -146,16 +146,16 @@ window.PORTFOLIO_CONTENT = {
     email: "516628513@qq.com",
     wechat: "点击查看二维码",
     wechatQr: "./assets/wechat-qr.jpg",
-    resumeUrl: "#"
+    resumeUrl: ""
   },
   projects: [
     {
       id: "project-01",
       index: "01",
-      titleZh: "小说阅读器",
-      titleEn: "Novel Reader",
-      descZh: "今天完成的一款沉浸式小说阅读器，围绕长时间阅读、章节管理、阅读状态和 AI 辅助理解构建更顺滑的阅读体验。",
-      descEn: "An immersive novel reader built around long-session reading, chapter management, reading state, and AI-assisted comprehension.",
+      titleZh: "低视觉小说阅读器",
+      titleEn: "Low-Vision Novel Reader",
+      descZh: "为长篇网文和低视觉阅读场景设计的本地阅读工具，用进度恢复、章节状态和 AI 摘要降低停读后的回忆成本。",
+      descEn: "A local reading tool for long-form web fiction and low-vision reading, reducing re-entry friction with progress recovery, chapter state, and AI summaries.",
       tagsZh: ["AI", "产品设计"],
       tagsEn: ["AI", "Product"],
       role: "AI Product Manager",
@@ -175,8 +175,7 @@ window.PORTFOLIO_CONTENT = {
       role: "iOS Product Design",
       year: "2026",
       accent: "#D4AF37",
-      visualKind: "metronome",
-      href: "http://127.0.0.1:8765/design/cadence-beat-design.html"
+      visualKind: "metronome"
     },
     {
       id: "project-03",

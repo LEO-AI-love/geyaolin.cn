@@ -2,6 +2,7 @@
   const data = window.PORTFOLIO_CONTENT;
   let lang = localStorage.getItem("portfolio_lang") || "zh";
   let activeFilter = "all";
+  const prefersReducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches || false;
 
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selector));
@@ -25,7 +26,7 @@
 
   function applyContent() {
     document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
-    document.title = `${data.profile.brand} - Portfolio`;
+    document.title = lang === "zh" ? "耀霖 - AI 产品经理作品集" : "Yaolin - AI Product Portfolio";
     $(".brand-mark").textContent = data.profile.brand;
     $("[data-email-link]").textContent = data.profile.email;
     $("[data-email-link]").href = `mailto:${data.profile.email}`;
@@ -39,7 +40,14 @@
     if (qrImage && data.profile.wechatQr) {
       qrImage.src = data.profile.wechatQr;
     }
-    $("[data-resume-link]").href = data.profile.resumeUrl;
+    const resumeLink = $("[data-resume-link]");
+    if (data.profile.resumeUrl) {
+      resumeLink.href = data.profile.resumeUrl;
+      resumeLink.removeAttribute("aria-disabled");
+    } else {
+      resumeLink.removeAttribute("href");
+      resumeLink.setAttribute("aria-disabled", "true");
+    }
 
     $$("[data-i18n]").forEach((node) => {
       const value = t(node.dataset.i18n);
@@ -198,6 +206,11 @@
     phraseIndex = 0;
     typed = "";
     deleting = false;
+    if (prefersReducedMotion) {
+      const target = $("[data-typewriter]");
+      target.textContent = data[lang].hero.roles[0] || "";
+      return;
+    }
     typeLoop();
   }
 
@@ -279,6 +292,38 @@
   let lastFocusedBeforeQr = null;
   let qrCloseTimer = null;
 
+  function setPageInert(inert) {
+    $$("header, main").forEach((node) => {
+      node.inert = inert;
+      if (inert) {
+        node.setAttribute("aria-hidden", "true");
+      } else {
+        node.removeAttribute("aria-hidden");
+      }
+    });
+  }
+
+  function trapModalFocus(event) {
+    const modal = $("[data-qr-modal]");
+    if (!modal || modal.hidden || event.key !== "Tab") return;
+
+    const focusable = $$(
+      "button, [href], input, select, textarea, [tabindex]:not([tabindex='-1'])",
+      modal
+    ).filter((node) => !node.disabled && node.offsetParent !== null);
+    if (!focusable.length) return;
+
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  }
+
   function openQrModal() {
     const modal = $("[data-qr-modal]");
     if (!modal) return;
@@ -286,6 +331,7 @@
     clearTimeout(qrCloseTimer);
     lastFocusedBeforeQr = document.activeElement;
     modal.hidden = false;
+    setPageInert(true);
     document.body.classList.add("modal-open");
 
     requestAnimationFrame(() => {
@@ -300,6 +346,7 @@
 
     modal.classList.remove("is-open");
     document.body.classList.remove("modal-open");
+    setPageInert(false);
     qrCloseTimer = window.setTimeout(() => {
       modal.hidden = true;
     }, 180);
@@ -318,6 +365,7 @@
       if (event.key === "Escape") {
         closeQrModal();
       }
+      trapModalFocus(event);
     });
   }
 

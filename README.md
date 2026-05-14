@@ -1,30 +1,27 @@
-# Personal Portfolio
+# 耀霖个人网站
 
-这是一个基于 `https://onechang.vercel.app/` 视觉方向重做的个人网站模板：暗色背景、金色点缀、动态首屏、作品筛选、关于、技能、联系和中英文切换。
+这是耀霖的个人网站，展示 AI 产品经理方向的个人介绍、作品集、项目案例与联系方式。站点发布在 `https://geyaolin.cn/`。
 
-## 怎么改成你自己的
+## 内容结构
 
-主要改 `content.js`：
+- `index.html`：首页结构，包含首屏、作品集、关于、技能和联系方式
+- `novel-reader.html`：低视觉小说阅读器项目案例页
+- `content.js`：中英文文案、项目列表和联系方式配置
+- `script.js`：语言切换、作品筛选、联系信息交互和弹窗控制
+- `styles.css`：整体视觉样式、响应式布局和可访问性动效兜底
 
-- `profile.brand`：左上角标识
-- `profile.email` / `profile.wechat`：联系方式
-- `zh` / `en`：中英文文案
-- `projects`：作品卡片、年份、标签、角色、强调色
+## 本地预览
 
-## 怎么预览
-
-直接双击 `index.html`，或在浏览器里打开它即可。
+直接双击 `index.html` 即可预览。也可以用任意静态文件服务器打开项目根目录。
 
 ## 发布
 
-这个站点适合直接发布到 GitHub Pages。根目录已经包含：
+这个站点按 GitHub Pages 静态站方式组织。根目录包含：
 
 - `CNAME`：绑定自定义域名 `geyaolin.cn`
 - `.nojekyll`：让 GitHub Pages 按静态文件原样发布
+- `robots.txt` / `sitemap.xml`：提供基础搜索引擎索引入口
 
-## 文件说明
+## 当前状态
 
-- `index.html`：页面结构
-- `styles.css`：视觉样式与响应式布局
-- `content.js`：你的个人内容配置
-- `script.js`：双语切换、打字机、作品筛选、复制联系信息、首屏动画
+网站已完成首页、项目案例、移动端基础适配、联系方式入口、首屏视频兜底资源优化和未使用素材清理。后续重点是继续补充真实项目案例，并上线正式简历。
