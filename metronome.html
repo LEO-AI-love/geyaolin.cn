@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>跑步节拍器 - 耀霖 Portfolio</title>
+    <meta name="description" content="跑步节拍器项目介绍：一款无广告、可与音乐同时播放、支持独立节拍音量的 iOS 跑步辅助工具。" />
+    <link rel="canonical" href="https://geyaolin.cn/metronome.html" />
+    <meta name="theme-color" content="#080808" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="耀霖 Portfolio" />
+    <meta property="og:title" content="跑步节拍器 - 耀霖 Portfolio" />
+    <meta property="og:description" content="无广告、可与音乐同时播放、支持独立节拍音量的 iOS 跑步辅助工具。" />
+    <meta property="og:url" content="https://geyaolin.cn/metronome.html" />
+    <meta property="og:image" content="https://geyaolin.cn/assets/metronome/run.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="跑步节拍器 - 耀霖 Portfolio" />
+    <meta name="twitter:description" content="无广告、可与音乐同时播放、支持独立节拍音量的 iOS 跑步辅助工具。" />
+    <meta name="twitter:image" content="https://geyaolin.cn/assets/metronome/run.webp" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="metro-body">
+    <header class="site-header is-scrolled">
+      <nav class="nav-shell" aria-label="Primary navigation">
+        <a class="brand-mark" href="./index.html#top">LEO</a>
+        <div class="nav-links">
+          <a class="nav-link" href="./index.html#work">作品</a>
+          <a class="nav-link" href="./index.html#about">关于</a>
+          <a class="nav-link" href="./index.html#contact">联系</a>
+          <a class="lang-toggle" href="./index.html">EN</a>
+        </div>
+        <div class="case-mobile-links">
+          <a href="./index.html#work">作品</a>
+          <a href="./index.html#contact">联系</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="metro-main">
+      <section class="metro-hero">
+        <div class="metro-track" aria-hidden="true"></div>
+        <div class="metro-shell metro-hero-grid">
+          <div class="metro-copy">
+            <a class="back-link" href="./index.html#work">← 返回作品</a>
+            <p class="eyebrow">2026 / IOS PRODUCT</p>
+            <h1>跑步节拍器</h1>
+            <p class="metro-lede">
+              为跑者做的节奏工具：没有广告和会员墙，可以和 QQ 音乐、网易云音乐、Apple Music 一起播放，并且只调整节拍声自己的音量。
+            </p>
+            <div class="metro-hero-actions">
+              <a class="download-action metro-action" href="#design-story">查看设计思路</a>
+              <span>TestFlight 验证中</span>
+            </div>
+          </div>
+
+          <div class="metro-stage" aria-label="跑步节拍器界面预览">
+            <div class="metro-phone metro-phone-main">
+              <img src="./assets/metronome/run.webp" alt="跑步节拍器主界面，显示 160 SPM/BPM、快捷步频和节拍音量" />
+            </div>
+            <div class="metro-pulse-card" aria-hidden="true">
+              <span>160</span>
+              <strong>SPM / BPM</strong>
+              <i></i>
+            </div>
+            <div class="metro-phone metro-phone-back">
+              <img src="./assets/metronome/sound.webp" alt="声音设置界面，显示节拍音量独立调节和音色选择" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="metro-shell metro-problem" id="design-story">
+        <div>
+          <p class="eyebrow">01 - 初衷</p>
+          <h2>跑步时，你想听音乐，也想听见自己的节奏。</h2>
+        </div>
+        <div class="metro-problem-grid">
+          <article>
+            <span>Membership</span>
+            <h3>不想为了基础节拍付会员</h3>
+            <p>很多节拍器把常用能力藏在会员后面，跑者只是想稳定步频，却先被付费墙打断。</p>
+          </article>
+          <article>
+            <span>Ads</span>
+            <h3>不想被广告打断训练</h3>
+            <p>训练节奏一旦被弹窗和广告切开，工具就从辅助变成干扰。</p>
+          </article>
+          <article>
+            <span>Mixing</span>
+            <h3>不想在音乐和节拍之间二选一</h3>
+            <p>节拍声应该叠在音乐上，而不是抢走 QQ 音乐、网易云音乐或 Apple Music 的播放权。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="metro-shell metro-feature-band">
+        <div class="metro-feature-copy">
+          <p class="eyebrow">02 - 核心体验</p>
+          <h2>只调节拍声，不动音乐音量。</h2>
+          <p>
+            把节拍音量和音乐音量分开，是这个产品最重要的判断。跑者可以保留熟悉的歌单，只把节拍声调到刚好能听见的位置。
+          </p>
+          <div class="metro-spec-list">
+            <span>独立节拍音量</span>
+            <span>后台继续播放</span>
+            <span>锁屏可控</span>
+            <span>快速步频预设</span>
+          </div>
+        </div>
+        <div class="metro-screens">
+          <img src="./assets/metronome/sound-grid.webp" alt="音色选择完整界面，包含清晰电子、木质敲击、轻铃、Hi-hat、风铃、架子鼓" />
+          <img src="./assets/metronome/settings.webp" alt="设置界面，包含主题风格、和音乐一起播放、锁屏继续播放和当前状态" />
+        </div>
+      </section>
+
+      <section class="metro-shell metro-motion">
+        <p class="eyebrow">03 - Motion System</p>
+        <h2>用视觉节拍，让页面也跟着跑起来。</h2>
+        <div class="metro-motion-grid">
+          <div class="metro-beat-visual" aria-hidden="true">
+            <div class="metro-rings">
+              <span></span>
+              <span></span>
+              <span></span>
+              <strong>160</strong>
+              <em>BPM</em>
+            </div>
+            <div class="metro-needle"></div>
+            <div class="metro-bars">
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+            </div>
+          </div>
+          <div class="metro-motion-copy">
+            <article>
+              <span>01</span>
+              <h3>大数字，低认知成本</h3>
+              <p>跑步中扫一眼就能确认当前步频，不需要在密集控件里找状态。</p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3>橙色只给关键操作</h3>
+              <p>步频、音量、当前选中音色保持同一套强调色，训练时更容易形成肌肉记忆。</p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3>深色界面适合夜跑和锁屏</h3>
+              <p>高对比但不刺眼，降低户外和夜间使用时的视觉负担。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="metro-shell metro-closing">
+        <h2>一个不抢戏的节拍器。</h2>
+        <p>它不是音乐 App 的替代品，而是跑步时贴在音乐底下的一层节奏轨道。</p>
+        <a class="download-action metro-action" href="./index.html#contact">交流这个项目</a>
+      </section>
+    </main>
+  </body>
+</html>

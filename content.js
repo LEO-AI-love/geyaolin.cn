@@ -166,16 +166,17 @@ window.PORTFOLIO_CONTENT = {
     {
       id: "project-02",
       index: "02",
-      titleZh: "iOS 节拍器 App",
-      titleEn: "iOS Metronome App",
-      descZh: "准备开发的一款 iOS 端节拍器工具，聚焦稳定节奏、练习反馈、触感提示和干净专注的移动体验。",
-      descEn: "An iOS metronome concept focused on steady tempo, practice feedback, haptic cues, and a clean mobile experience.",
+      titleZh: "跑步节拍器",
+      titleEn: "Running Metronome",
+      descZh: "一款无广告、可与音乐同时播放、支持独立节拍音量的 iOS 跑步辅助工具，让节奏贴着歌单一起跑。",
+      descEn: "An ad-free iOS running metronome that plays alongside music and keeps cadence volume separate from your playlist.",
       tagsZh: ["产品设计", "实验"],
       tagsEn: ["Product", "Lab"],
       role: "iOS Product Design",
       year: "2026",
       accent: "#D4AF37",
-      visualKind: "metronome"
+      visualKind: "metronome",
+      href: "./metronome.html"
     },
     {
       id: "project-03",
