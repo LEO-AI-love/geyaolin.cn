@@ -16,7 +16,7 @@ window.PORTFOLIO_CONTENT = {
     work: {
       kicker: "01 - 作品集",
       title: "精选项目",
-      filters: ["全部", "产品设计", "AI", "品牌", "实验"],
+      filters: ["全部", "产品设计", "AI", "实验"],
       note: "更多项目正在整理中"
     },
     about: {
@@ -87,7 +87,7 @@ window.PORTFOLIO_CONTENT = {
     work: {
       kicker: "01 - Portfolio",
       title: "Selected Work",
-      filters: ["All", "Product", "AI", "Brand", "Lab"],
+      filters: ["All", "Product", "AI", "Lab"],
       note: "More projects coming soon"
     },
     about: {
@@ -161,6 +161,7 @@ window.PORTFOLIO_CONTENT = {
       role: "AI Product Manager",
       year: "2026",
       accent: "#6EE7B7",
+      visualKind: "reader",
       href: "./novel-reader.html"
     },
     {
@@ -176,46 +177,8 @@ window.PORTFOLIO_CONTENT = {
       year: "2026",
       accent: "#D4AF37",
       visualKind: "metronome",
+      image: "./assets/metronome/run.webp",
       href: "./metronome.html"
-    },
-    {
-      id: "project-03",
-      index: "03",
-      titleZh: "个人品牌视觉系统",
-      titleEn: "Personal Brand Visual System",
-      descZh: "围绕个人定位建立一套可复用的视觉语言，用于网站、社交内容、封面图和作品集展示。",
-      descEn: "A reusable visual language for a personal website, social posts, cover images, and portfolio storytelling.",
-      tagsZh: ["品牌", "实验"],
-      tagsEn: ["Brand", "Lab"],
-      role: "Creative Direction",
-      year: "2025",
-      accent: "#818CF8"
-    },
-    {
-      id: "project-04",
-      index: "04",
-      titleZh: "复杂后台体验重构",
-      titleEn: "Complex Dashboard UX Redesign",
-      descZh: "重构信息层级、任务路径和关键状态反馈，帮助团队在高密度业务场景中更快判断与行动。",
-      descEn: "Restructured information hierarchy, task paths, and status feedback for faster decisions in dense operational workflows.",
-      tagsZh: ["产品设计"],
-      tagsEn: ["Product"],
-      role: "UX Lead",
-      year: "2025",
-      accent: "#F87171"
-    },
-    {
-      id: "project-05",
-      index: "05",
-      titleZh: "互动原型实验",
-      titleEn: "Interactive Prototype Lab",
-      descZh: "用快速原型验证交互节奏、动态反馈和叙事方式，探索更有记忆点的产品表达。",
-      descEn: "Fast prototypes for validating interaction rhythm, motion feedback, and memorable product storytelling.",
-      tagsZh: ["实验", "AI"],
-      tagsEn: ["Lab", "AI"],
-      role: "Independent Builder",
-      year: "2024",
-      accent: "#F87171"
     }
   ]
 };

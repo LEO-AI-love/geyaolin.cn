@@ -150,22 +150,48 @@
         const tags = lang === "zh" ? project.tagsZh : project.tagsEn;
         const tagName = project.href ? "a" : "article";
         const linkAttrs = project.href ? `href="${project.href}" aria-label="${title}"` : "";
-        const visualMarkup = project.visualKind === "metronome"
+        const visualMarkup = project.visualKind === "reader"
           ? `
-              <div class="project-metronome" aria-hidden="true">
-                <div class="beat-ring">
-                  <strong>128</strong>
-                  <span>BPM</span>
-                </div>
-                <div class="beat-arm"></div>
-                <div class="beat-rails">
+              <div class="project-reader-shot" aria-hidden="true">
+                <div class="reader-shot-top">
+                  <span></span>
                   <i></i>
+                </div>
+                <div class="reader-shot-page">
+                  <strong>第1章 宿舍求生游戏</strong>
+                  <p>章节摘要、人物关系、断点回顾和伏笔提示被收进阅读边缘。</p>
+                  <em></em>
+                  <em></em>
+                  <em></em>
+                </div>
+                <div class="reader-shot-ai">
+                  <span>AI Context</span>
                   <i></i>
                   <i></i>
                 </div>
               </div>
             `
-          : "";
+          : project.image
+            ? `
+                <img class="project-image" src="${project.image}" alt="" loading="lazy" aria-hidden="true" />
+                <div class="project-image-glow" aria-hidden="true"></div>
+              `
+            : project.visualKind === "metronome"
+              ? `
+                  <div class="project-metronome" aria-hidden="true">
+                    <div class="beat-ring">
+                      <strong>128</strong>
+                      <span>BPM</span>
+                    </div>
+                    <div class="beat-arm"></div>
+                    <div class="beat-rails">
+                      <i></i>
+                      <i></i>
+                      <i></i>
+                    </div>
+                  </div>
+                `
+              : "";
         return `
           <${tagName} class="project-card" ${linkAttrs} style="
             --accent-alpha: ${alphaColor(project.accent, 0.14)};
