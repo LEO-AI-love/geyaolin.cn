@@ -7,7 +7,7 @@ window.PORTFOLIO_CONTENT = {
     },
     hero: {
       year: "2026",
-      title: "耀霖 / AI 产品经理",
+      title: "耀霖 / AI<br class=\"mobile-title-break\" />产品经理",
       roles: ["AI 产品经理", "独立产品实践者", "交互体验设计"],
       tagline:
         "我关注 AI 工具、内容工作流和个人效率产品，把复杂能力拆成清晰、低打扰、能落地的产品体验。\n坐标深圳。",
@@ -78,7 +78,7 @@ window.PORTFOLIO_CONTENT = {
     },
     hero: {
       year: "2026",
-      title: "Yaolin / AI Product Manager",
+      title: "Yaolin / AI<br class=\"mobile-title-break\" />Product Manager",
       roles: ["AI Product Manager", "Independent Builder", "Interaction Design"],
       tagline:
         "I work on AI tools, content workflows, and personal productivity products, turning complex capabilities into clear, low-friction product experiences.\nBased in Shenzhen.",
