@@ -1859,6 +1859,7 @@ a.project-card {
 .metro-problem,
 .metro-feature-band,
 .metro-update,
+.metro-fix,
 .metro-motion,
 .metro-closing {
   position: relative;
@@ -1875,6 +1876,7 @@ a.project-card {
 .metro-problem h2,
 .metro-feature-copy h2,
 .metro-update-copy h2,
+.metro-fix-intro h2,
 .metro-motion h2,
 .metro-closing h2 {
   margin: 0;
@@ -1918,6 +1920,8 @@ a.project-card {
 .metro-problem-grid p,
 .metro-feature-copy p,
 .metro-update-copy p,
+.metro-fix-intro p,
+.metro-fix-card p,
 .metro-motion-copy p,
 .metro-closing p {
   margin: 0;
@@ -2103,6 +2107,134 @@ a.project-card {
   background:
     linear-gradient(135deg, rgba(255, 122, 55, 0.08), rgba(18, 18, 20, 0.78) 42%),
     rgba(18, 18, 20, 0.72);
+}
+
+.metro-fix {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.52fr) minmax(0, 1fr);
+  gap: clamp(42px, 6vw, 84px);
+  align-items: start;
+}
+
+.metro-fix-intro p {
+  max-width: 540px;
+  margin-top: 28px;
+  font-size: 16px;
+}
+
+.metro-fix-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  min-width: 0;
+}
+
+.metro-fix-card {
+  min-width: 0;
+  min-height: 260px;
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 6px;
+  background:
+    linear-gradient(135deg, rgba(255, 122, 55, 0.055), rgba(18, 18, 20, 0.78) 48%),
+    rgba(18, 18, 20, 0.72);
+}
+
+.metro-fix-card-primary {
+  grid-column: 1 / -1;
+  min-height: 0;
+  border-color: rgba(255, 122, 55, 0.28);
+  background:
+    linear-gradient(135deg, rgba(255, 122, 55, 0.13), rgba(18, 18, 20, 0.78) 46%),
+    linear-gradient(90deg, rgba(255, 122, 55, 0.06) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    rgba(18, 18, 20, 0.78);
+  background-size: auto, 34px 34px, 34px 34px, auto;
+}
+
+.metro-fix-card span {
+  display: block;
+  color: #ff7a37;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.metro-fix-card h3 {
+  margin: 14px 0 12px;
+  color: var(--text);
+  font-size: 24px;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.metro-fix-card p,
+.metro-fix-card li {
+  color: #aaa79c;
+  line-height: 1.85;
+  overflow-wrap: anywhere;
+}
+
+.metro-fix-card ul {
+  display: grid;
+  gap: 12px;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.metro-fix-card li {
+  position: relative;
+  padding-left: 18px;
+}
+
+.metro-fix-card li::before {
+  position: absolute;
+  top: 0.78em;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  content: "";
+  border-radius: 50%;
+  background: #ff7a37;
+}
+
+.metro-fix-proof {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 122, 55, 0.18);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.metro-fix-proof div {
+  min-width: 0;
+  padding: 22px;
+  background: rgba(18, 18, 20, 0.88);
+}
+
+.metro-fix-proof strong {
+  display: block;
+  color: #fff8ec;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-weight: 300;
+  line-height: 1;
+}
+
+.metro-fix-proof span {
+  display: block;
+  margin-top: 10px;
+  color: #ffb685;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 1.7;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .metro-lockshot {
@@ -2409,6 +2541,7 @@ a.project-card {
   .metro-feature-band,
   .metro-update,
   .metro-motion-grid,
+  .metro-fix,
   .reader-demo,
   .case-feature-list div {
     grid-template-columns: 1fr;
@@ -2433,6 +2566,7 @@ a.project-card {
   .metro-feature-band,
   .metro-problem,
   .metro-update,
+  .metro-fix,
   .metro-motion,
   .metro-closing {
     padding: 92px 0;
@@ -2440,6 +2574,14 @@ a.project-card {
 
   .metro-version-flow {
     grid-template-columns: 1fr;
+  }
+
+  .metro-fix-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .metro-fix-card-primary {
+    grid-column: auto;
   }
 
   .metro-version-flow::before {
@@ -2590,6 +2732,10 @@ a.project-card {
   .metro-update-proof {
     grid-template-columns: 1fr;
     padding: 22px;
+  }
+
+  .metro-fix-proof {
+    grid-template-columns: 1fr;
   }
 
   .metro-lockshot img {

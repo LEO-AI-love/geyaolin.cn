@@ -4,18 +4,18 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>跑步节拍器 - 耀霖 Portfolio</title>
-    <meta name="description" content="跑步节拍器项目介绍：从 1.0 的纯净节拍体验，到 2.0 的锁屏实时活动控制，一款无广告、可与音乐混播的 iOS 跑步辅助工具。" />
+    <meta name="description" content="跑步节拍器项目介绍：从 1.0 的纯净节拍体验，到 2.0 的锁屏实时活动控制，并修复两步路和 Apple Watch 提示音打断后不自动恢复的问题。" />
     <link rel="canonical" href="https://geyaolin.cn/metronome.html" />
     <meta name="theme-color" content="#080808" />
     <meta property="og:type" content="article" />
     <meta property="og:site_name" content="耀霖 Portfolio" />
     <meta property="og:title" content="跑步节拍器 - 耀霖 Portfolio" />
-    <meta property="og:description" content="从 1.0 的纯净节拍体验，到 2.0 的锁屏实时活动控制：无广告、可与音乐混播的 iOS 跑步辅助工具。" />
+    <meta property="og:description" content="从纯净节拍到锁屏控制，并修复两步路和 Apple Watch 提示音打断后不自动恢复的问题。" />
     <meta property="og:url" content="https://geyaolin.cn/metronome.html" />
     <meta property="og:image" content="https://geyaolin.cn/assets/metronome/run.webp" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="跑步节拍器 - 耀霖 Portfolio" />
-    <meta name="twitter:description" content="从 1.0 的纯净节拍体验，到 2.0 的锁屏实时活动控制：无广告、可与音乐混播的 iOS 跑步辅助工具。" />
+    <meta name="twitter:description" content="从纯净节拍到锁屏控制，并修复两步路和 Apple Watch 提示音打断后不自动恢复的问题。" />
     <meta name="twitter:image" content="https://geyaolin.cn/assets/metronome/run.webp" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
@@ -48,8 +48,8 @@
               为跑者做的节奏工具：从 1.0 的纯净节拍体验，到 2.0 的锁屏实时活动控制。没有广告和会员墙，可以和 QQ 音乐、网易云音乐、Apple Music 一起播放。
             </p>
             <div class="metro-hero-actions">
-              <a class="download-action metro-action" href="#version-2">查看版本演进</a>
-              <span>TestFlight 验证中</span>
+              <a class="download-action metro-action" href="#interruption-fix">查看最新修复</a>
+              <span>提示音打断后可自动恢复</span>
             </div>
           </div>
 
@@ -106,6 +106,7 @@
             <span>与音乐混播</span>
             <span>上划杀后台停止</span>
             <span>快速步频预设</span>
+            <span>提示音打断后自动恢复</span>
           </div>
         </div>
         <div class="metro-screens">
@@ -160,8 +161,64 @@
         </div>
       </section>
 
+      <section class="metro-shell metro-fix" id="interruption-fix">
+        <div class="metro-fix-intro">
+          <p class="eyebrow">04 - 本次更新</p>
+          <h2>被提示音打断后，节拍会自己回来。</h2>
+          <p>
+            户外测试时发现：两步路 App 的语音提示和 Apple Watch 提示会临时抢占系统音频。旧版本在提示结束后没有继续播放节拍，跑步中需要手动重新开始。
+          </p>
+        </div>
+
+        <div class="metro-fix-grid">
+          <article class="metro-fix-card metro-fix-card-primary">
+            <span>Bug Fixed / Audio Interruption</span>
+            <h3>修复「提示音打断后不自动恢复播放」的问题。</h3>
+            <p>
+              原逻辑只在 iOS 明确给出 shouldResume 标记时才恢复播放；两步路语音、Apple Watch 提示这类短提示结束后不一定带这个标记，所以节拍器会停在暂停状态。
+            </p>
+            <ul>
+              <li>播放中遇到两步路语音提示：提示结束后节拍自动继续。</li>
+              <li>播放中遇到 Apple Watch 提示：提示结束后节拍自动继续。</li>
+              <li>电话等系统中断结束后，只要中断前正在播放，也按用户意图恢复。</li>
+            </ul>
+          </article>
+
+          <article class="metro-fix-card">
+            <span>Policy</span>
+            <h3>从「系统建议」改成「用户意图」。</h3>
+            <p>
+              中断开始时记录节拍器是否正在播放；中断结束后，只要中断前是播放状态，就自动重新启动节拍，不再依赖 shouldResume。
+            </p>
+          </article>
+
+          <article class="metro-fix-card">
+            <span>Safety</span>
+            <h3>手动暂停不会被误启动。</h3>
+            <p>
+              用户主动暂停或停止会清掉自动恢复意图；耳机断开仍保留安全暂停策略，不会在不合适的场景里自己响起来。
+            </p>
+          </article>
+
+          <div class="metro-fix-proof" aria-label="本次更新验证状态">
+            <div>
+              <strong>9/9</strong>
+              <span>单元测试通过</span>
+            </div>
+            <div>
+              <strong>iPhone</strong>
+              <span>新版已安装到真机</span>
+            </div>
+            <div>
+              <strong>QA</strong>
+              <span>覆盖两步路、Apple Watch、锁屏和后台复测</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="metro-shell metro-motion">
-        <p class="eyebrow">04 - Motion System</p>
+        <p class="eyebrow">05 - Motion System</p>
         <h2>用视觉节拍，让页面也跟着跑起来。</h2>
         <div class="metro-motion-grid">
           <div class="metro-beat-visual" aria-hidden="true">
